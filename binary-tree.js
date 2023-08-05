@@ -181,15 +181,59 @@ class BinaryTree {
   /** Further study!
    * serialize(tree): serialize the BinaryTree object tree into a string. */
 
-  static serialize() {
+  static serialize(inTree) {
+    // result will hold traversed node values
+    let result = []
 
+    // Navigate the tree & get values. If dead end found, push '#'
+    // Traversal order is similar to a Depth-First-Search, prioritizing left nodes
+    function treeTraversal(node){
+      if(node){
+        result.push(node.val);
+        treeTraversal(node.left);
+        treeTraversal(node.right);
+      } else{
+        result.push("#")
+      }
+    }
+    
+    treeTraversal(inTree.root)
+    return result.join(" ")
   }
 
   /** Further study!
    * deserialize(stringTree): deserialize stringTree into a BinaryTree object. */
 
-  static deserialize() {
+  static deserialize(sTree) {
+    // Empty tree
+    if(!sTree) return null;
 
+    // Convert into an array
+    let arrTree = sTree.split(" ")
+
+    function makeTree(){
+      // Build tree until run out of nodes to add
+      // Traversal order is similar to a Depth-First-Search, prioritizing left nodes
+      if(arrTree.length){
+        let currVal = arrTree.shift();
+        // Dead end, set this branch's value to null
+        if(currVal === "#") return null;
+        
+        // Create the current node, as number instead of string
+        let currNode = new BinaryTreeNode(+currVal);
+        
+        // Create the branch nodes
+        currNode.left = makeTree();
+        currNode.right = makeTree();
+
+        return currNode;
+      }
+    }
+    
+    // Build from the root
+    const root = makeTree();
+    // Return tree built with this root
+    return new BinaryTree(root);
   }
 
   /** Further study!
