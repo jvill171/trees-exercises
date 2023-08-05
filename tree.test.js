@@ -46,35 +46,35 @@ describe("sumValues", function() {
   });
 });
 
-// describe("countEvens", function() {
-//   it("counts nodes in simple trees", function() {
-//     expect(smallTree.countEvens()).toEqual(1);
-//   });
+describe("countEvens", function() {
+  it("counts nodes in simple trees", function() {
+    expect(smallTree.countEvens()).toEqual(1);
+  });
 
-//   it("counts Treenodes in more complicated trees", function() {
-//     expect(largeTree.countEvens()).toEqual(4);
-//   });
+  it("counts Treenodes in more complicated trees", function() {
+    expect(largeTree.countEvens()).toEqual(4);
+  });
 
-//   it("counts empty", function() {
-//     expect(emptyTree.countEvens()).toEqual(0);
-//   });
-// });
+  it("counts empty", function() {
+    expect(emptyTree.countEvens()).toEqual(0);
+  });
+});
 
-// describe("numGreater", function() {
-//   it("counts nodes in small trees", function() {
-//     expect(smallTree.numGreater(0)).toEqual(2);
-//     expect(smallTree.numGreater(1)).toEqual(1);
-//     expect(smallTree.numGreater(2)).toEqual(0);
-//     expect(smallTree.numGreater(3)).toEqual(0);
-//   });
+describe("numGreater", function() {
+  it("counts nodes in small trees", function() {
+    expect(smallTree.numGreater(0)).toEqual(2);
+    expect(smallTree.numGreater(1)).toEqual(1);
+    expect(smallTree.numGreater(2)).toEqual(0);
+    expect(smallTree.numGreater(3)).toEqual(0);
+  });
 
-//   it("counts nodes in larger trees", function() {
-//     expect(largeTree.numGreater(0)).toEqual(8);
-//     expect(largeTree.numGreater(4)).toEqual(4);
-//     expect(largeTree.numGreater(8)).toEqual(0);
-//   });
+  it("counts nodes in larger trees", function() {
+    expect(largeTree.numGreater(0)).toEqual(8);
+    expect(largeTree.numGreater(4)).toEqual(4);
+    expect(largeTree.numGreater(8)).toEqual(0);
+  });
 
-//   it("counts nodes in an empty  tree", function() {
-//     expect(emptyTree.numGreater(0)).toEqual(0);
-//   });
-// });
+  it("counts nodes in an empty  tree", function() {
+    expect(emptyTree.numGreater(0)).toEqual(0);
+  });
+});
